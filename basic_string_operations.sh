@@ -5,7 +5,7 @@ ISAY=$BUFFETT
 change1=${ISAY[@]/snow/foot}
 change2=${change1[@]//snow/}
 change3=${change2[@]/finding/getting}
-loc=`expr index "$change3" 'w'`
+loc=$(echo "$change3" | awk '{print index($0, "w")}')
 ISAY=${change3::$loc+2}
 
 
